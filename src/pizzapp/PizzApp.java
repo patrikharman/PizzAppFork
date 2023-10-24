@@ -1,15 +1,46 @@
 package pizzapp;
 
 public class PizzApp extends javax.swing.JFrame {
-
+ 
+     int alapAr = -1;
+     double meretSzorzo = 1;
+    private int extra1;
+    private double alapAr2;
+    private int extra3;
+    private int extra2;
+    private int vegsoAr *= db;
+    
+   
+     
     public PizzApp() {
         initComponents();
+        
+         int alapAr2 = 1750;
+        
+        meretSzorzo = 1;
+        
+        int db = 1;
+        
+        int extra1 = 0;
+        int extra2 = 0;
+        int extra3 = 0;
+        int extrak = extra1 + extra2+extra3;
+        
+        
+    }
+
+    private void szamolasEsKiiras(int db, double extrak) {
+         double alapAr2 = 0;
+        double vegsoAr = alapAr2 * meretSzorzo + extrak;
+        vegsoAr *= db;
+        lblAr.setText(vegsoAr + "");
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         lblValaszthato = new javax.swing.JLabel();
         cmdValaszthatoPizzak = new javax.swing.JComboBox<>();
         pnlMeret = new javax.swing.JPanel();
@@ -40,13 +71,30 @@ public class PizzApp extends javax.swing.JFrame {
 
         cmdValaszthatoPizzak.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Margherita", "Hawaii", "Songoku", "Diavola" }));
         cmdValaszthatoPizzak.setSelectedIndex(2);
+        cmdValaszthatoPizzak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdValaszthatoPizzakActionPerformed(evt);
+            }
+        });
 
         pnlMeret.setBorder(javax.swing.BorderFactory.createTitledBorder("Méret"));
 
+        buttonGroup1.add(rdbMeret25);
         rdbMeret25.setText("25 cm");
+        rdbMeret25.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                rdbMeret25ItemStateChanged(evt);
+            }
+        });
 
+        buttonGroup1.add(rdbMeret32);
         rdbMeret32.setSelected(true);
         rdbMeret32.setText("32 cm");
+        rdbMeret32.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                rdbMeret32ItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlMeretLayout = new javax.swing.GroupLayout(pnlMeret);
         pnlMeret.setLayout(pnlMeretLayout);
@@ -55,8 +103,8 @@ public class PizzApp extends javax.swing.JFrame {
             .addGroup(pnlMeretLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlMeretLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rdbMeret25, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rdbMeret32, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rdbMeret32, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rdbMeret25, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlMeretLayout.setVerticalGroup(
@@ -76,7 +124,7 @@ public class PizzApp extends javax.swing.JFrame {
         lblFizFt.setText("Ft");
 
         lblAr.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblAr.setText("1750");
+        lblAr.setText("0");
 
         numDb.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
 
@@ -113,10 +161,25 @@ public class PizzApp extends javax.swing.JFrame {
         pnlExtrak.setBorder(javax.swing.BorderFactory.createTitledBorder("Extrák"));
 
         chbSajt.setText("sajt");
+        chbSajt.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                chbSajtItemStateChanged(evt);
+            }
+        });
 
         chbHagyma.setText("hagyma");
+        chbHagyma.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                chbHagymaItemStateChanged(evt);
+            }
+        });
 
         chbAnanasz.setText("ananász");
+        chbAnanasz.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                chbAnanaszItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlExtrakLayout = new javax.swing.GroupLayout(pnlExtrak);
         pnlExtrak.setLayout(pnlExtrakLayout);
@@ -160,9 +223,9 @@ public class PizzApp extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblValaszthato, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cmdValaszthatoPizzak, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlMeret, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnRendel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlFizetendo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, Short.MAX_VALUE))
+                    .addComponent(pnlFizetendo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, Short.MAX_VALUE)
+                    .addComponent(pnlMeret, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
@@ -180,7 +243,7 @@ public class PizzApp extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -194,9 +257,9 @@ public class PizzApp extends javax.swing.JFrame {
                         .addComponent(lblValaszthato)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cmdValaszthatoPizzak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(pnlMeret, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(pnlFizetendo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -210,6 +273,70 @@ public class PizzApp extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmdValaszthatoPizzakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdValaszthatoPizzakActionPerformed
+        int pizzaIndex = cmdValaszthatoPizzak.getSelectedIndex();
+        
+        int alapAr = -1;
+        
+        if(pizzaIndex == 0){
+            alapAr = 1580;
+        }else if (pizzaIndex == 1){
+            alapAr = 1680;
+        }else if (pizzaIndex == 2){
+            alapAr = 1750;
+        }else if (pizzaIndex == 3){
+            alapAr = 2100;
+        }       
+                
+        int alapAr2 = 1750;
+        
+       
+        
+        int db = 1;
+        
+        int extra1 = 0;
+        int extra2 = 0;
+        int extra3 = 0;
+        int extrak = extra1 + extra2+extra3;
+        
+        double vegsoAr = alapAr2 * meretSzorzo + extrak;
+        vegsoAr *= db;
+        lblAr.setText(vegsoAr + "");
+    }//GEN-LAST:event_cmdValaszthatoPizzakActionPerformed
+
+    private void rdbMeret25ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rdbMeret25ItemStateChanged
+       meretSzorzo = .75;
+         double extrak = 0;
+       
+       double vegsoAr = alapAr2 * meretSzorzo + extrak;
+       int vegsoAr *= db;
+       lblAr.setText(vegsoAr + "");
+    }//GEN-LAST:event_rdbMeret25ItemStateChanged
+
+    private void rdbMeret32ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rdbMeret32ItemStateChanged
+         meretSzorzo = 1;
+    }//GEN-LAST:event_rdbMeret32ItemStateChanged
+
+    private void chbSajtItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chbSajtItemStateChanged
+       if (chbSajt.isSelected()){
+           sajt = 200;
+       }else{
+           sajt = 0;
+       }
+       extrak = extra1 + extra2+extra3;
+       double vegsoAr = alapAr2 * meretSzorzo + extrak;
+       int vegsoAr *= db;
+       lblAr.setText(vegsoAr + "");
+    }//GEN-LAST:event_chbSajtItemStateChanged
+
+    private void chbHagymaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chbHagymaItemStateChanged
+        
+    }//GEN-LAST:event_chbHagymaItemStateChanged
+
+    private void chbAnanaszItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chbAnanaszItemStateChanged
+        
+    }//GEN-LAST:event_chbAnanaszItemStateChanged
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -245,6 +372,7 @@ public class PizzApp extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRendel;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JCheckBox chbAnanasz;
     private javax.swing.JCheckBox chbHagyma;
     private javax.swing.JCheckBox chbSajt;
